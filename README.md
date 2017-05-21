@@ -42,4 +42,4 @@ sortOn.extend(Array);
 #### Returns
 + ~~If you specify a value of 4 or `Array.UNIQUESORT` for the `options` parameter, and two or more elements being sorted have identical sort fields, a value of 0 is returned and the array is not modified~~
 + ~~If you specify a value of 8 or `Array.RETURNINDEXEDARRAY` for the `options` parameter, an array is returned that reflects the results of the sort and the array is not modified.~~
-+ ~~Otherwise, nothing is returned and the array is modified to reflect the sort order.~~
++ Otherwise, nothing is returned and the array is modified to reflect the sort order.  ✓
