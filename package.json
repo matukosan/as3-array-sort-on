@@ -1,0 +1,34 @@
+{
+  "name": "sort-on",
+  "version": "0.0.1",
+  "description": "Implementation of ActionScript 3's `Array.sortOn`",
+  "main": "index.js",
+  "scripts": {
+    "test": "istanbul cover node_modules/mocha/bin/_mocha && codecov"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndreasPizsa/as3-array-sort-on.git"
+  },
+  "keywords": [
+    "actionscript",
+    "as3",
+    "array",
+    "sort",
+    "sorton",
+    "CASEINSENSITIVE",
+    "DESCENDING",
+    "NUMERIC"
+  ],
+  "author": "Andreas Pizsa <andreas.pizsa@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AndreasPizsa/as3-array-sort-on/issues"
+  },
+  "homepage": "https://github.com/AndreasPizsa/as3-array-sort-on#readme",
+  "devDependencies": {
+    "codecov": "^2.2.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.4.1"
+  }
+}
