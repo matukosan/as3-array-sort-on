@@ -34,7 +34,6 @@ function sortOn(array, fieldNames, options)
     options = options || 0;
 
     if(options & sortOn.UNIQUESORT) throw new Error('UNIQUESORT is not implemented');
-//    if(options & sortOn.RETURNINDEXEDARRAY) throw new Error('RETURNINDEXEDARRAY is not implemented');
 
     const transformations = [];
 
@@ -46,17 +45,19 @@ function sortOn(array, fieldNames, options)
       (options & sortOn.NUMERIC)
       ? function() { return parseFloat(this); }
       : function() {
-          if(typeof this === 'string') return this;
-          if(typeof this === 'number') return ''+this;
-          return this.toString();
+          return typeof this === 'string' ? this
+              :  typeof this === 'number' ? ''+this
+              :  this.toString();
         }
     );
 
-    if(options & sortOn.CASEINSENSITIVE) transformations.push(String.prototype.toLocaleLowerCase);
+    if(options & sortOn.CASEINSENSITIVE) {
+      transformations.push(String.prototype.toLowerCase);
+    }
 
     transformations.apply = Array.prototype.reduce.bind(
       transformations,
-      function(value, transformation) { return transformation.apply(value); }
+      (value, transformation) => transformation.apply(value)
     );
 
     const AGreaterThanB = (options & sortOn.DESCENDING) ? -1 : 1;
