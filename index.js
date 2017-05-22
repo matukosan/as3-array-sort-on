@@ -39,7 +39,16 @@ function sortOn(array, fieldNames, options)
       function getProperty() { return this[fieldName]; }
     );
 
-    if(options & sortOn.NUMERIC) transformations.push(function() { return parseFloat(this); });
+    transformations.push(
+      (options & sortOn.NUMERIC)
+      ? function() { return parseFloat(this); }
+      : function() {
+          if(typeof this === 'string') return this;
+          if(typeof this === 'number') return ''+number;
+          return this.toString();
+        }
+    );
+
     if(options & sortOn.CASEINSENSITIVE) transformations.push(String.prototype.toLocaleLowerCase);
 
     transformations.apply = Array.prototype.reduce.bind(

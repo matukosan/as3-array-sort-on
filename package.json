@@ -27,6 +27,8 @@
   },
   "homepage": "https://github.com/AndreasPizsa/as3-array-sort-on#readme",
   "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-env": "^1.5.0",
     "codecov": "^2.2.0",
     "istanbul": "^0.4.5",
     "mocha": "^3.4.1"

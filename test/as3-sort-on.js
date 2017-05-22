@@ -154,6 +154,12 @@ describe('as3 sortOn', function(){
       ]);
     });
 
+    it('Numeric fields are sorted as if they were strings, so 100 precedes 99, because "1" is a lower string value than "9"', function(){
+      const array = [ {a: 100}, {a: 99}, {a: 8000} ];
+      array.sortOn('a');
+      assert.deepEqual(array, [ {a: 100}, { a: 8000 }, { a: 99 }]);
+    });
+
     describe('Returns', function(){
       it('Otherwise, nothing is returned and the array is modified to reflect the sort order', function() {
         assert.strictEqual(fixtures.sortOn('name'), undefined);

@@ -23,7 +23,7 @@ sortOn.extend(Array);
 + Sorting is case-sensitive (Z precedes a) ✓
 + Sorting is ascending (a precedes b) ✓
 + The array is modified to reflect the sort order; multiple elements that have identical sort fields are placed consecutively in the sorted array in no particular order.  ✓
-+ ~~Numeric fields are sorted as if they were strings, so 100 precedes 99, because "1" is a lower string value than "9".~~ Send a PR
++ Numeric fields are sorted as if they were strings, so 100 precedes 99, because "1" is a lower string value than "9".
 + To pass multiple flags, separate them with the bitwise OR (`|`) operator ✓
 
 #### Parameter `fieldName`
