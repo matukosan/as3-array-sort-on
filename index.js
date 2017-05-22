@@ -12,7 +12,7 @@ function sortOn(array, fieldNames, options)
   // Note: The fieldName and options arrays must have the same number of
   // elements; otherwise, the options array is ignored.
   // @see http://help.adobe.com/en_US/FlashPlatform/reference/actionscript/3/Array.html#sortOn()
-  if(fieldNames.length != options.length) {
+  if(fieldNames.length !== options.length) {
     options = new Array(fieldNames.length).fill(undefined);
   }
 
@@ -72,8 +72,7 @@ function sortOn(array, fieldNames, options)
       return 0;
     }
   }
-
-};
+}
 
 sortOn.defineConstants = function(obj) {
   function constant(value) {
