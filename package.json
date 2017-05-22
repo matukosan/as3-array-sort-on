@@ -1,5 +1,5 @@
 {
-  "name": "sort-on",
+  "name": "sort-on-as3",
   "version": "0.0.1",
   "description": "Implementation of ActionScript 3's `Array.sortOn`",
   "main": "index.js",

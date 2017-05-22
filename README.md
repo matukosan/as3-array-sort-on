@@ -10,14 +10,14 @@ This is a (partial) implementation of the [ActionScript 3 `Array.sortOn` method]
 ## Install
 
 ```bash
-npm i -S sort-on
+npm i -S sort-on-as3
 
 ```
 
 ## Usage
 
 ```javascript
-const sortOn = require('sort-on');
+const sortOn = require('sort-on-as3');
 sortOn.extend(Array);
 
 ```
