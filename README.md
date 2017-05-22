@@ -39,10 +39,10 @@ sortOn.extend(Array);
 + `Array.DESCENDING` ✓
 + `Array.NUMERIC` ✓
 + ~~`Array.UNIQUESORT`~~
-+ ~~`Array.RETURNINDEXEDARRAY`~~
-+ the `options` parameter accepts an array of sort options such that each sort option corresponds to a sort field in the fieldName parameter  ✓
++ `Array.RETURNINDEXEDARRAY`  ✓
++ the `options` parameter accepts an array of sort options such that each sort option corresponds to a sort field in the `fieldName` parameter  ✓
 
 #### Returns
 + ~~If you specify a value of 4 or `Array.UNIQUESORT` for the `options` parameter, and two or more elements being sorted have identical sort fields, a value of 0 is returned and the array is not modified~~
-+ ~~If you specify a value of 8 or `Array.RETURNINDEXEDARRAY` for the `options` parameter, an array is returned that reflects the results of the sort and the array is not modified.~~
-+ Otherwise, nothing is returned and the array is modified to reflect the sort order.  ✓
++ If you specify a value of 8 or `Array.RETURNINDEXEDARRAY` for the `options` parameter, an array is returned that reflects the results of the sort and the array is not modified. ✓
++ Otherwise, nothing is returned and the array is modified to reflect the sort order. ✓
