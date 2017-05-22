@@ -96,10 +96,11 @@ sortOn.defineConstants(sortOn);
 
 sortOn.extend = function(klass) {
   klass.prototype.sortOn = function(fieldName, options) {
-    const args = [ this ];
-    for(i of arguments) args.push(i);
+    const args = Array.from(arguments);
+    args.unshift(this);
     return sortOn.apply(this, args);
   }
+
   sortOn.defineConstants(klass);
 }
 
