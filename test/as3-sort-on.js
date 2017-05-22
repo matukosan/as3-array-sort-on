@@ -142,7 +142,13 @@ describe('as3 sortOn', function(){
   });
 
   describe('AS3 compatibility', function() {
-    it('The fieldName and options arrays must have the same number of elements; otherwise, the options array is ignored.');
+    it('The fieldName and options arrays must have the same number of elements; otherwise, the options array is ignored.', function() {
+      const array = [ {a: 100, b: 1}, {a: 99, b: 1}, {a: 8000, b: 1} ];
+      array.sortOn('a');
+      fixtures.sortOn(['a', 'b'], [ Array.NUMERIC ]);
+      assert.deepEqual(array, [ {a: 100, b: 1}, { a: 8000, b: 1 }, { a: 99, b: 1 }]);
+    });
+
     it('Sorting is case-sensitive (Z precedes a), sorting is ascending', function() {
       fixtures.sortOn('name');
       assert.deepEqual(fixtures, [
