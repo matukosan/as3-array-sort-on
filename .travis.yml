@@ -1,16 +1,24 @@
 language: node_js
 node_js:
-  - "node"
-  - "7"
-  - "6"
+- node
+- '7'
+- '6'
 sudo: false
 install:
-  - npm install
+- npm install
 script:
-  - npm test
+- npm test
 addons:
   code_climate:
     repo_token: 15ade48309513a576dc60364cef61bb84f7c7c4a7d97f1f95edb4342d51a7f22
 after_success:
-  - npm install -g codeclimate-test-reporter
-  - codeclimate-test-reporter < coverage/lcov.info
+- npm install -g codeclimate-test-reporter
+- codeclimate-test-reporter < coverage/lcov.info
+deploy:
+  provider: npm
+  email: hopster@gmail.com
+  api_key:
+    secure: R+gO+kHNhbVPuey8POOgb+uRUMC2i3zDmjvUaz7hZhMvalqF5bDJXupv7789R0+7X8b8IkK6vlQ+gaVfGeyHyCNeF/gPJIRdtwTkipmPtHWHhYPmus5A7u3BM6SbmxuqdLRc/vKSCv4uoEj6mgIImLahDWMb/qz1EaVgA9lPQ8VJNGNlyTnffiRURDJlBIzZKM/B/JwmbAXzrjp703qiqSmbTGAdx0RKiz4+BNhNC1Vw+w9AyL/whOF9vxZfn31f/WPRg7Tc3mlp3ZAOt4M0FFw28JCWOGCkN6chc5ht2pXQ4Gzd3TIHgZU83BmkWDW6EEBfODkA1l+UKF3G0IdodtFYb+OaF7I+JNcaVjxYjGX123BSBLxMMqNrEJekOHg+Fupiyb0P9Kc7OpFbiDMM3iFkTd7PJUx4anYxm5dQCmOu0uBzkdk7VdgzniHqTWWLF7dUffdp1jLEAEOn/JqbFHZWJlplgQzqcn+mPxFQKwQOtEnAJXkJW+THhRv0NaFlXbNnq8/DuAvy9YWDqrsGlu+m9o1JnE4I3YEMbAVpAsPOSs8i+03HrCAfUl2usD/S4nFSznTJ2V/2JMx/rWWJeK614YYltvt6SzY3eIqAdIMicQHM5yqx3f/32RfayK/m4g+LphIfKxUbp3Q05JoA4rneOJ+kPq0Bn+2N1Fjsi6c=
+  on:
+    tags: true
+    repo: AndreasPizsa/as3-array-sort-on
