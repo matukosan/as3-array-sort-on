@@ -1,5 +1,7 @@
 [![Travis](https://img.shields.io/travis/AndreasPizsa/as3-array-sort-on.svg?style=flat-square)](https://github.com/AndreasPizsa/as3-array-sort-on)
 [![Codecov](https://img.shields.io/codecov/c/github/AndreasPizsa/as3-array-sort-on.svg?style=flat-square)](https://codecov.io/gh/AndreasPizsa/as3-array-sort-on)
+[![CodeClimatte](https://img.shields.io/codeclimate/github/AndreasPizsa/as3-array-sort-on.svg?style=flat-square)](https://codeclimate.com/github/AndreasPizsa/as3-array-sort-on)
+
 
 # `Array.sortOn` for JavaScript
 
