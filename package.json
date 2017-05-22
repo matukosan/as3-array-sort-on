@@ -1,6 +1,6 @@
 {
   "name": "sort-on-as3",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Implementation of ActionScript 3's `Array.sortOn`",
   "main": "index.js",
   "types": "sort-on-as3.d.ts",
