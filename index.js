@@ -1,8 +1,8 @@
 function sortOn(array, fieldNames, options)
 {
 
-  if(arguments.length == 2 && typeof fieldNames === 'number') {
-    options = fieldNames;
+  if(arguments.length === 2 && typeof fieldNames === 'number') {
+    options    = fieldNames;
     fieldNames = undefined;
   }
 
@@ -44,7 +44,7 @@ function sortOn(array, fieldNames, options)
       ? function() { return parseFloat(this); }
       : function() {
           if(typeof this === 'string') return this;
-          if(typeof this === 'number') return ''+number;
+          if(typeof this === 'number') return ''+this;
           return this.toString();
         }
     );
