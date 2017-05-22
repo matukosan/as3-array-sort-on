@@ -16,22 +16,25 @@ function sortOn(array, fieldNames, options)
     options = new Array(fieldNames.length).fill(undefined);
   }
 
+  const returnIndexedArray = options[0] & sortOn.RETURNINDEXEDARRAY;
+  if(returnIndexedArray) array = Array.from(array);
+
   const functions = fieldNames.map( (fieldName, index) => {
     return createComparisonFn(fieldName, options[index]);
   });
 
-  array.sort(function comparisonFn(a, b) {
+  const sorted = array.sort(function comparisonFn(a, b) {
     return functions.reduce( (result, fn) => result || fn(a, b) , 0);
   });
 
-  return;
+  return returnIndexedArray ? sorted : undefined;
 
 
   function createComparisonFn(fieldName, options) {
     options = options || 0;
 
     if(options & sortOn.UNIQUESORT) throw new Error('UNIQUESORT is not implemented');
-    if(options & sortOn.RETURNINDEXEDARRAY) throw new Error('RETURNINDEXEDARRAY is not implemented');
+//    if(options & sortOn.RETURNINDEXEDARRAY) throw new Error('RETURNINDEXEDARRAY is not implemented');
 
     const transformations = [];
 

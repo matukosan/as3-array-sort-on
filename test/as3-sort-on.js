@@ -136,9 +136,6 @@ describe('as3 sortOn', function(){
       assert.throws(() => fixtures.sortOn('name', Array.UNIQUESORT));
     });
 
-    it('RETURNINDEXEDARRAY fails', function() {
-      assert.throws(() => fixtures.sortOn('name', Array.RETURNINDEXEDARRAY));
-    });
   });
 
   describe('AS3 compatibility', function() {
@@ -167,6 +164,14 @@ describe('as3 sortOn', function(){
     });
 
     describe('Returns', function(){
+      it('If you specify a value of 8 or Array.RETURNINDEXEDARRAY for the options parameter, an array is returned that reflects the results of the sort and the array is not modified.', function() {
+        const array = [ { a: 'Z' }, { a: 'c' }, { a: 'A' } ];
+        const result = array.sortOn('a', Array.RETURNINDEXEDARRAY);
+        assert.deepEqual(array, [ { a: 'Z' }, { a: 'c' }, { a: 'A' } ]);
+        assert.deepEqual(result,[ { a: 'A' }, { a: 'Z' }, { a: 'c' } ]);
+        //assert.throws(() => fixtures.sortOn('name', Array.RETURNINDEXEDARRAY));
+      });
+
       it('Otherwise, nothing is returned and the array is modified to reflect the sort order', function() {
         assert.strictEqual(fixtures.sortOn('name'), undefined);
       });
